@@ -44,6 +44,13 @@ const deliverables = [
   },
 ];
 
+const conversionPoints = [
+  "Mensagem principal clara nos primeiros segundos.",
+  "Oferta explicada sem excesso de texto técnico.",
+  "Botões de contato posicionados nos pontos de decisão.",
+  "Design responsivo para quem chega pelo celular.",
+];
+
 const proofPoints = [
   "Briefing direto, sem reunião desnecessária.",
   "Layout pensado para celular antes do desktop.",
@@ -165,6 +172,28 @@ function App() {
         </div>
       </section>
 
+      <section className="showcase-section" aria-label="Exemplo visual de entrega">
+        <div className="showcase-card">
+          <img
+            src="/site-preview.svg"
+            alt="Ilustração de uma landing page com chamada principal, cards e botão de WhatsApp"
+          />
+        </div>
+        <div className="showcase-copy">
+          <p className="eyebrow">Página com função comercial</p>
+          <h2>Bonita, rápida e construída para conduzir o visitante até o contato.</h2>
+          <p>
+            A página não é só uma vitrine. Ela precisa responder dúvidas, reduzir
+            insegurança e deixar claro por que vale a pena chamar você agora.
+          </p>
+          <ul className="compact-list">
+            {conversionPoints.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="problem-band">
         <p className="eyebrow">O problema</p>
         <h2>Seu cliente decide rápido. Sua página precisa explicar rápido também.</h2>
@@ -212,10 +241,37 @@ function App() {
         </ul>
       </section>
 
+      <section className="studio-section">
+        <figure className="studio-photo">
+          <img src="/foto-estudando.png" alt="Lilian Sousa estudando e planejando projetos web" />
+        </figure>
+        <div className="studio-copy">
+          <p className="eyebrow">Estratégia antes do código</p>
+          <h2>Antes de programar, eu organizo a mensagem que precisa vender.</h2>
+          <p>
+            O projeto começa entendendo sua oferta, seu público e o próximo passo
+            que você quer que o visitante tome. Depois disso, layout, texto e código
+            trabalham na mesma direção.
+          </p>
+          <div className="mini-grid">
+            <span>Oferta clara</span>
+            <span>Fluxo de contato</span>
+            <span>Mobile primeiro</span>
+          </div>
+        </div>
+      </section>
+
       <section id="processo" className="section process-section">
-        <div className="section-heading">
-          <p className="eyebrow">Processo</p>
-          <h2>Do briefing ao site publicado, com escopo claro.</h2>
+        <div className="process-layout">
+          <div className="section-heading">
+            <p className="eyebrow">Processo</p>
+            <h2>Do briefing ao site publicado, com escopo claro.</h2>
+          </div>
+          <img
+            className="process-visual"
+            src="/process-visual.svg"
+            alt="Ilustração do processo de diagnóstico, proposta, construção e publicação"
+          />
         </div>
         <div className="timeline">
           {steps.map((step, index) => (
@@ -244,19 +300,26 @@ function App() {
       </section>
 
       <section id="contato" className="final-cta">
-        <p className="eyebrow">Comece com uma conversa</p>
-        <h2>Peça um orçamento para sua página ou sistema.</h2>
-        <p>
-          Envie o que você vende, para quem vende e qual resultado espera. Eu
-          respondo com os próximos passos para transformar isso em uma entrega real.
-        </p>
-        <div className="hero-actions">
+        <div className="final-cta-copy">
+          <p className="eyebrow">Comece com uma conversa</p>
+          <h2>Peça um orçamento para sua página ou sistema.</h2>
+          <p>
+            Envie o que você vende, para quem vende e qual resultado espera. Eu
+            respondo com os próximos passos para transformar isso em uma entrega real.
+          </p>
+        </div>
+        <div className="contact-card" aria-label="Canais de contato">
+          <span className="contact-label">Atendimento direto</span>
           <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">
-            Falar no WhatsApp: {whatsappNumber}
+            Falar no WhatsApp
           </a>
           <a className="button button-secondary" href={emailUrl}>
-            {email}
+            Enviar e-mail
           </a>
+          <div className="contact-details">
+            <span>{whatsappNumber}</span>
+            <span>{email}</span>
+          </div>
         </div>
       </section>
 

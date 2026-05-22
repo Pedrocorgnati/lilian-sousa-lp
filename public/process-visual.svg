@@ -1,0 +1,33 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Fluxo de construcao de uma pagina profissional</title>
+  <desc id="desc">Ilustracao abstrata do processo de diagnostico, estrutura, desenvolvimento e publicacao.</desc>
+  <rect width="900" height="520" rx="34" fill="#171412"/>
+  <path d="M80 410C166 318 226 370 310 282C398 190 474 205 555 126C640 44 716 86 820 50" stroke="#0F766E" stroke-width="26" stroke-linecap="round" opacity="0.36"/>
+  <path d="M80 410C166 318 226 370 310 282C398 190 474 205 555 126C640 44 716 86 820 50" stroke="#F7F2EB" stroke-width="3" stroke-dasharray="9 13" opacity="0.72"/>
+  <g>
+    <rect x="78" y="316" width="178" height="112" rx="22" fill="#FFF7EC"/>
+    <circle cx="118" cy="356" r="18" fill="#0F766E"/>
+    <rect x="148" y="342" width="70" height="12" rx="6" fill="#171412"/>
+    <rect x="112" y="386" width="108" height="12" rx="6" fill="#625A52" fill-opacity="0.45"/>
+  </g>
+  <g>
+    <rect x="276" y="214" width="178" height="112" rx="22" fill="#FFF7EC"/>
+    <circle cx="316" cy="254" r="18" fill="#B97725"/>
+    <rect x="346" y="240" width="78" height="12" rx="6" fill="#171412"/>
+    <rect x="310" y="284" width="112" height="12" rx="6" fill="#625A52" fill-opacity="0.45"/>
+  </g>
+  <g>
+    <rect x="474" y="112" width="178" height="112" rx="22" fill="#FFF7EC"/>
+    <circle cx="514" cy="152" r="18" fill="#0F766E"/>
+    <rect x="544" y="138" width="82" height="12" rx="6" fill="#171412"/>
+    <rect x="508" y="182" width="110" height="12" rx="6" fill="#625A52" fill-opacity="0.45"/>
+  </g>
+  <g>
+    <rect x="672" y="244" width="152" height="112" rx="22" fill="#0F766E"/>
+    <circle cx="710" cy="284" r="18" fill="#FFF7EC"/>
+    <rect x="740" y="270" width="52" height="12" rx="6" fill="#FFF7EC"/>
+    <rect x="704" y="314" width="82" height="12" rx="6" fill="#FFF7EC" fill-opacity="0.62"/>
+  </g>
+  <circle cx="724" cy="104" r="120" fill="#B97725" fill-opacity="0.14"/>
+  <circle cx="190" cy="126" r="76" fill="#0F766E" fill-opacity="0.18"/>
+</svg>
