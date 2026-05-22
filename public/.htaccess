@@ -7,6 +7,11 @@
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
     Header unset Server
     Header always unset X-Powered-By
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
 </IfModule>
 
 # Compression
@@ -22,7 +27,7 @@
 # Caching
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/html "access plus 0 seconds"
     ExpiresByType text/css "access plus 1 year"
     ExpiresByType application/javascript "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
