@@ -29,5 +29,55 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
+    <!-- multibackend:login:start -->
+    <style>
+      /* CONTRATO DE VISIBILIDADE (anti-cascade) — NAO REMOVER. Author CSS com
+         `display` explicito vence a regra user-agent [hidden]{display:none} na
+         cascata; sem esta regra, el.hidden=true NAO esconde o controle e o header
+         logado fica incoerente. Restaura `hidden` como autoritativo no widget. */
+      [data-testid="multibackend-login-widget"] [hidden] { display: none !important; }
+      [data-testid="multibackend-login-widget"] {
+        position: fixed; top: 12px; right: 12px; z-index: 9999;
+        display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+        max-width: calc(100vw - 24px);
+        font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+        background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(6px);
+        border: 1px solid rgba(28, 26, 23, 0.12); border-radius: 999px;
+        padding: 6px 10px; box-shadow: 0 6px 24px rgba(28, 26, 23, 0.12);
+      }
+      [data-testid="multibackend-login-widget"] .mb-account:not([hidden]) { display: inline-flex; align-items: center; gap: 8px; }
+      [data-testid="multibackend-login-widget"] button,
+      [data-testid="multibackend-login-widget"] .mb-user-label {
+        font: inherit; font-weight: 700; font-size: 0.82rem; line-height: 1;
+        border-radius: 999px; padding: 8px 14px; cursor: pointer; border: 0;
+        text-decoration: none; white-space: nowrap;
+      }
+      [data-testid="multibackend-login-widget"] .mb-login-btn { background: #1c1a17; color: #f7f2eb; }
+      [data-testid="multibackend-login-widget"] .mb-register-btn { background: transparent; color: #1c1a17; border: 1px solid rgba(28, 26, 23, 0.35); }
+      [data-testid="multibackend-login-widget"] .mb-user-label { color: #1c1a17; }
+      [data-testid="multibackend-login-widget"] .mb-logout-btn { background: transparent; color: #1c1a17; border: 1px solid rgba(28, 26, 23, 0.35); }
+      [data-testid="multibackend-login-widget"] .mb-login-status { margin: 0; font-size: 0.74rem; color: #5c574f; max-width: 220px; }
+      [data-testid="multibackend-login-widget"] .mb-login-status[role="alert"] { color: #9a3b25; }
+      @media (max-width: 480px) {
+        [data-testid="multibackend-login-widget"] { top: 8px; right: 8px; padding: 5px 8px; gap: 6px; }
+        [data-testid="multibackend-login-widget"] button,
+        [data-testid="multibackend-login-widget"] .mb-user-label { font-size: 0.76rem; padding: 7px 11px; }
+        [data-testid="multibackend-login-widget"] .mb-login-status { display: none; }
+      }
+    </style>
+    <div class="mb-login" data-testid="multibackend-login-widget" data-mb-state="empty">
+      <button data-testid="multibackend-login" type="button" class="mb-login-btn">Entrar</button>
+      <button data-testid="multibackend-register" type="button" class="mb-register-btn">Criar conta</button>
+      <span class="mb-account" hidden>
+        <a class="mb-user-label" href="https://www.systemforgedashboard.com/dashboard">Minha conta</a>
+        <button data-testid="multibackend-logout" type="button" class="mb-logout-btn">Sair</button>
+      </span>
+      <p class="mb-login-status" data-mb-state-for="empty" data-testid="multibackend-login-empty">Entre para acessar sua conta.</p>
+      <p class="mb-login-status" data-mb-state-for="loading" data-testid="multibackend-login-loading" hidden>Conectando ao provedor de login...</p>
+      <p class="mb-login-status" data-mb-state-for="error" data-testid="multibackend-login-error" role="alert" hidden>Nao foi possivel iniciar o login. Tente novamente.</p>
+      <p class="mb-login-status" data-mb-state-for="success" data-testid="multibackend-login-success" hidden>Sessao iniciada.</p>
+    </div>
+    <script type="module" src="/oidc-pkce-snippet.js"></script>
+    <!-- multibackend:login:end -->
   </body>
 </html>

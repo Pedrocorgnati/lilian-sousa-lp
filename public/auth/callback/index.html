@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Entrando... | Lilian Sousa</title>
+    <style>
+      /* Contrato de visibilidade (anti-cascade) — tambem nesta pagina (R-26 corolario):
+         author CSS com display explicito venceria [hidden] da UA. */
+      [data-testid="multibackend-login-widget"] [hidden] { display: none !important; }
+      body { font-family: 'Manrope', system-ui, sans-serif; background: #f7f2eb; color: #1c1a17;
+             min-height: 100vh; display: grid; place-items: center; margin: 0; }
+      .mb-callback { text-align: center; padding: 2rem; }
+      .mb-callback a { color: #1c1a17; font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <div class="mb-callback" data-testid="multibackend-login-widget" data-mb-state="loading">
+      <p class="mb-login-status" data-mb-state-for="empty" data-testid="multibackend-login-empty" hidden>Voce ainda nao entrou.</p>
+      <p class="mb-login-status" data-mb-state-for="loading" data-testid="multibackend-login-loading">Concluindo o login, um instante...</p>
+      <p class="mb-login-status" data-mb-state-for="error" data-testid="multibackend-login-error" role="alert" hidden>
+        Nao foi possivel concluir o login. <a href="/">Voltar ao inicio</a> e tentar novamente.
+      </p>
+      <p class="mb-login-status" data-mb-state-for="success" data-testid="multibackend-login-success" hidden>Login efetuado. Redirecionando...</p>
+    </div>
+    <script type="module" src="/oidc-pkce-snippet.js"></script>
+  </body>
+</html>
