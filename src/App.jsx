@@ -1,4 +1,5 @@
 import React from "react";
+import AuthButtons from "./AuthButtons.jsx";
 import "./styles.css";
 
 const whatsappNumber = "+55 49 6529 2798";
@@ -122,6 +123,7 @@ function App() {
           <a href="#duvidas">Dúvidas</a>
           <a href="#contato">Contato</a>
         </div>
+        <AuthButtons />
       </nav>
 
       <section id="inicio" className="hero">
