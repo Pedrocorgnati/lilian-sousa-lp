@@ -1,4 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+// React precisa estar em escopo: este projeto NAO tem vite.config (sem
+// @vitejs/plugin-react), entao o JSX usa o runtime CLASSICO (React.createElement)
+// e cada arquivo .jsx deve importar React explicitamente (igual App.jsx). Sem isso
+// => "React is not defined" em runtime e a arvore inteira nao renderiza (tela branca).
+import React, { useEffect, useRef, useState } from 'react';
 // oidc-client-ts vendorizado (mesmo bundle ESM de public/vendor, NUNCA CDN — ver
 // public/vendor/README.md). Importado estatico para o Vite empacotar same-origin.
 import { UserManager, WebStorageStateStore } from './vendor/oidc-client-ts.js';
